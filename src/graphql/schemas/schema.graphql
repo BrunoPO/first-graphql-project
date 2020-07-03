@@ -4,7 +4,16 @@ type User {
     email: String!
 }
 
+type Recipe {
+    id: ID!
+    title: String
+    thumbnail: String
+    previewText: String
+}
+
 type Query {
+    recipes(query: String!): [Recipe!]!
+    recipe(query: String!, id: ID!): Recipe
     users: [User!]!
     user(id: ID!): User
 }

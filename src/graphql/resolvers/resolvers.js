@@ -1,7 +1,9 @@
 const {db} = require('../../helpers/db');
+const recipe = require('../queries/recipe');
 
 module.exports = {
     Query: {
+        ...recipe,
         users: () => {
             return db.users.value;
         },
